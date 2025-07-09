@@ -5,7 +5,7 @@
     {
         //테스트
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution0704(1342420, 5342));
+        Console.WriteLine(sol.Solution07092(3,2));
 
         Csstudy csstudy = new Csstudy();
         csstudy.Datatype();
