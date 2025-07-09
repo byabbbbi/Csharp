@@ -1,15 +1,16 @@
 ﻿internal class Program
 {
+
     private static void Main(string[] args)
     {
         //테스트
-        Console.WriteLine(Solution0704(1342343420, 5342));
+        Solution sol = new Solution();
+        Console.WriteLine(sol.Solution0704(1342420, 5342));
+
+        Csstudy csstudy = new Csstudy();
+        csstudy.Datatype();
     }
 
-    public static int Solution0704(int num1, int num2)
-    {
-        int answer = 0;
-        answer = num1 % num2;
-        return answer;
-    }
+
+
 }
