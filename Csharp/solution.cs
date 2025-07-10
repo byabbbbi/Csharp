@@ -1,10 +1,54 @@
 ﻿class Solution
 {
     /// <summary>
-    /// 두 수를 나눈 나머지를 반환합니다.
+    /// 두 수의 합
     /// </summary>
     /// <param name="num1">첫 번째 정수</param>
     /// <param name="num2">두 번째 정수</param>
+
+    public int Solution07102(int angle)
+    {
+
+        int answer = 0;
+        String str = "";
+        Console.Write(angle + "도는 ");
+
+        if (angle > 0 && angle < 90)
+        {
+            str = "예";
+            answer = 1;
+        }
+        else if (angle == 90)
+        {
+            str = "직";
+            answer = 2;
+
+        }
+        else if (angle > 90 && angle < 180)
+        {
+            str = "둔";
+            answer = 3;
+
+
+        }
+        else if (angle == 180)
+        {
+            str = "평";
+            answer = 4;
+
+        }
+        Console.WriteLine(str + "각입니다");
+
+        return answer;
+
+    }
+
+    public int Solution0710(int num1, int num2)
+    {
+
+        int answer = num1 + num2;
+        return answer;
+    }
 
     public int Solution07092(int num1, int num2)
     {

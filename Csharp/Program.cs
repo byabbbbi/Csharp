@@ -5,10 +5,12 @@
     {
         //테스트
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution07092(3,2));
+        Console.WriteLine(sol.Solution07102(110));
 
-        Csstudy csstudy = new Csstudy();
-        csstudy.Datatype();
+        // Csstudy csstudy = new Csstudy();
+        // csstudy.ArrayExample();
+        
+        
     }
 
 

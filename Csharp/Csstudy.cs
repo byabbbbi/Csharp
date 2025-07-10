@@ -1,5 +1,35 @@
 class Csstudy
 {
+    public void ArrayExample()
+    {
+        int sum = 0;
+        int[] nums = new int[10];
+
+        // for (int i = 0; i < nums.Length; i++)
+        // {
+        //     nums[i] = i + 1;
+        // }
+
+        // Console.WriteLine(string.Join(", ", nums));
+
+        Random rand = new Random();
+    
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = rand.Next() % 100;
+            Console.WriteLine(nums[i]); // 각각의 수 출력
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            sum += nums[i];
+        }
+
+        Console.WriteLine("sum= " + sum);
+
+    }
+
     public void Datatype()
     {
 
@@ -24,8 +54,9 @@ class Csstudy
 
         DateTime dt = new DateTime(2025, 7, 9, 11, 16, 00);
 
-        if (i > int.MaxValue) {
-            
+        if (i > int.MaxValue)
+        {
+
         }
     }
 }
