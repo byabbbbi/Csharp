@@ -1,11 +1,40 @@
 ﻿class Solution
 {
     /// <summary>
-    /// 두 수의 합
+    /// 양꼬치
     /// </summary>
-    /// <param name="num1">첫 번째 정수</param>
-    /// <param name="num2">두 번째 정수</param>
+    /// <param name="n">양꼬치 인분</param>
+    /// <param name="k">음료수 개수</param>
 
+
+    public int Solution07112(int n)
+    {
+        int answer = 0;
+
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 2 == 0)
+            {
+                answer += i;
+            }
+        }
+
+        return answer;
+    }
+
+
+    public int Solution0711(int n, int k)
+    {
+        int answer = 0;
+
+        int freeDrinks = n / 10; //무료음료수
+        int paidDrinks = k - freeDrinks; //유료음료수
+
+
+        answer = (n * 12000) + (paidDrinks * 2000);
+        return answer;
+    }
     public int Solution07102(int angle)
     {
 

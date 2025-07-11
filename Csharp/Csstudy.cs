@@ -1,5 +1,49 @@
+using System.Collections;
+
 class Csstudy
 {
+
+    public void Listsample()
+    {
+        // List<int> mylist = new List<int>();
+        var myList = new List<int>();
+        myList.Add(90);
+        myList.Add(88);
+        myList.Add(75);
+        int val = (int)myList[1];
+
+        var chrList = new List<char>();
+        myList.Add('b');
+
+        var boolList = new List<bool>();
+        boolList.Add(false);
+
+        int[] iarray = new int[100];
+        iarray[2] = 10;
+        myList.Add(10);
+        Console.WriteLine(iarray.Length);
+        Console.WriteLine(myList.Count);
+
+        myList.Sort();
+
+
+
+    }
+    public void ArrayListExample()
+    {
+        // ArrayList myList = new ArrayList();
+        var myList = new ArrayList(); // var 초기화 필수
+        // var yourList = true;
+        // ArrayList myList = new();
+        // ArrayList myList = [];
+        myList.Add(90);
+        myList.Add(88);
+        myList.Add(75);
+        int val = (int)myList[1];
+        Console.WriteLine(val);
+        Console.WriteLine(myList[0]);
+
+    }
     public void ArrayExample()
     {
         int sum = 0;
@@ -13,7 +57,7 @@ class Csstudy
         // Console.WriteLine(string.Join(", ", nums));
 
         Random rand = new Random();
-    
+
 
         for (int i = 0; i < nums.Length; i++)
         {
