@@ -3,6 +3,54 @@ using System.Collections;
 class Csstudy
 {
 
+    public void stackQueue()
+    {
+        var s = new Stack<float>();
+        s.Push(10.5f);
+        s.Push(3.54f);
+        s.Push(4.22f);
+
+
+        float pp = s.Peek();
+        Console.WriteLine("pp" + pp);
+
+        float p3 = s.Pop();
+        Console.WriteLine("p3=" + p3);
+
+        var q = new Queue<int>();
+
+        q.Enqueue(120);
+        q.Enqueue(130);
+        q.Enqueue(150);
+
+        int next = q.Dequeue(); // 120
+        next = q.Dequeue(); // 130
+
+    }
+
+    public void LinkedListsample()
+    {
+        // LinkedList<string> list = new LinkedList<string>();
+        var list = new LinkedList<string>();
+        list.AddLast("Apple");
+        list.AddLast("Banana");
+        list.AddLast("Lemon");
+
+        LinkedListNode<string> node = list.Find("Banana");
+        LinkedListNode<string> newNode = new LinkedListNode<string>("Grape");
+
+        // 새 Grape 노드를 Banana 노드 뒤에 추가
+        list.AddAfter(node, newNode);
+
+        // 리스트 출력
+        list.ToList<string>().ForEach(p => Console.WriteLine(p));
+
+        // Enumerator 리스트 출력
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);
+        }
+    }
     public void Listsample()
     {
         // List<int> mylist = new List<int>();

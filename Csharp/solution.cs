@@ -7,6 +7,39 @@
     /// <param name="k">음료수 개수</param>
 
 
+public int[] Solution07142(int[] num_list)
+    {
+       int[] answer = new int[num_list.Length];
+        
+        for (int i = 0; i < num_list.Length; i++) {
+            answer[i] = num_list[num_list.Length - 1 - i];
+        }
+
+        return answer;
+    }
+
+    public double Solution0714(int[] numbers)
+    {
+        double sum = 0;
+        double answer = 0;
+
+        //for
+        // for (int i = 0; i < numbers.Length; i++)
+        // {
+        //     sum += numbers[i];
+        // }
+
+        //foreach
+
+        foreach (int num in numbers)
+        {
+            sum += num;
+        }
+
+        answer = sum / numbers.Length;
+        return answer;
+    }
+
     public int Solution07112(int n)
     {
         int answer = 0;
