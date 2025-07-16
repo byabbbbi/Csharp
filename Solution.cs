@@ -3,11 +3,48 @@ using System.Text;
 class Solution
 {
     /// <summary>
-    /// 특정 문자 제거하기
+    /// 뒤집힌 문자열
     /// </summary>
     /// <param name="my_string"></param>
-    /// <param name="letter"></param>
     /// <returns></returns>
+
+    public string Solution07162(string my_string)
+    {
+        //위험한 코드
+        string answer = "";
+        var list = new List<char>(my_string);
+        list.Reverse();
+        answer = new string(list.ToArray());
+        return answer;
+
+
+        // var sb = new StringBuilder();
+        // foreach (var item in my_string)
+        // {
+        //     sb.Insert(0, item);
+        // }
+        // string answer = sb.ToString();
+        // return answer;
+        
+        // string answer = "";
+        // for (int i = my_string.Length - 1; i >= 0; i--)
+        // {
+        //     answer += my_string[i];
+        // }
+        // return answer;
+    }
+
+    /// <summary>
+    /// 편지
+    /// </summary>
+    /// <param name="message"></param>
+    /// <returns></returns>
+
+    public int Solution0716(string message)
+    {
+        int answer = message.Length * 2;
+        return answer;
+    }
     public string Solution07152(string my_string, string letter)
     {
         string answer = string.Empty;
