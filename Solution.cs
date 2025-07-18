@@ -1,6 +1,39 @@
 class Solution
 {
     /// <summary>
+    /// 최댓값 만들기 (1)
+
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int solution0718(int[] numbers)
+    {
+        int answer = 0;
+
+        //중첩 for문을 이용한 풀이
+        // for (int i = 0; i < numbers.Length; i++)
+        // {
+        //     for (int j = i + 1; j < numbers.Length; j++)
+        //     {
+        //         int product = numbers[i] * numbers[j];
+        //         if (product > answer)
+        //         {
+        //             answer = product;
+        //         }
+        //     }
+        // }
+        //정렬을 이용한 풀이
+        // Array.Sort(numbers);
+        // int last = numbers[numbers.Length - 1];
+        // int secondLast = numbers[numbers.Length - 2];
+        // answer = last * secondLast;
+
+        var list = new List<int>(numbers);
+        list.Sort();
+        answer = list[list.Count - 1] * list[list.Count - 2];
+        return answer;
+    }
+    /// <summary>
     /// 세균 증식
     /// </summary>
     /// <param name="n"></param>
@@ -96,7 +129,7 @@ class Solution
         answer = message.Length * 2;
         return answer;
     }
-    
+
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>

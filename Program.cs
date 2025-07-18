@@ -11,8 +11,8 @@
         Console.WriteLine(sol.Solution07172(7, 15));
         //PrintIntArray(sol.Solution0715(intArray));
 
-        CSStudy stduy = new CSStudy();
-        //stduy.ArraySample();
+        CSStudy study = new CSStudy();
+        study.SBSample();
     }
 
     /// <summary>
