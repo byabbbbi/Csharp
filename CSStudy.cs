@@ -2,6 +2,39 @@ using System.Collections;
 
 class CSStudy
 {
+    public void ArraySample()
+    {
+        var players = new string[10];
+        string[] regions = { "서울", "경기", "부산" };
+
+        var depts = new string[,] { { "김과장", "경리부" }, { "이과장", "총무부" } };
+
+        string[,,] cubes;
+
+        int[,] aa = new int[3, 2];
+        int[][] A = new int[3][];
+        A[0] = new int[2];
+        A[1] = new int[3] { 1, 2, 3 };
+        A[2] = new int[4] { 1, 2, 3, 4 };
+        A[0][0] = 1;
+        A[0][1] = 2;
+        aa[0, 0] = 1;
+        aa[0, 1] = 2;
+        aa[2, 1] = 3;
+        Console.WriteLine(A.GetLength(0));
+        Console.WriteLine(A[1].Length);
+        int sum = 0;
+        int[] scores = { 80, 78, 60, 90, 100 };
+        for (int i = 0; i < scores.Length; i++)
+        {
+            sum += scores[i];
+        }
+        //Console.WriteLine("sum = " + sum);
+        //Console.WriteLine("sum = {0}", sum);
+        Console.WriteLine($"sum = {sum}");
+    }
+
+
     public void SortedDicSample()
     {
         var tmap = new SortedDictionary<int, string>();
@@ -9,14 +42,17 @@ class CSStudy
         tmap.Add(1003, "John");
         tmap.Add(1010, "Irina");
         tmap.Add(1005, "Lee");
+        tmap.Add(1200, "Kim");
 
         string name1010 = tmap[1010];
 
+        // Iterator
         foreach (KeyValuePair<int, string> kv in tmap)
         {
-            Console.WriteLine("{2}{0}:{1}", kv.Key, kv.Value, "*");
+            Console.WriteLine("{2}{0}:{1} {4}", kv.Key, kv.Value, "*", 3, kv);
         }
     }
+
     public void HashTableSample()
     {
         Hashtable ht = new Hashtable();

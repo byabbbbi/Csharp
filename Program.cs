@@ -6,15 +6,28 @@
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] {1, 3, 5, 7};
+        var intArray = new int[] { 1, 3, 5, 7 };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution07162("fgdnfsf"));
+        Console.WriteLine(sol.Solution07172(7, 15));
         //PrintIntArray(sol.Solution0715(intArray));
 
         CSStudy stduy = new CSStudy();
-        stduy.SortedDicSample();
+        //stduy.ArraySample();
+    }
 
-        //MakeLotto();
+    /// <summary>
+    /// 정수배열의 합을 구하기
+    /// </summary>
+    /// <param name="scoresArray"></param>
+    /// <returns></returns>
+    public static int CalculateSum(int[] scoresArray)
+    {
+        int sum = 0;
+        for (int i = 0; i < scoresArray.Length; i++)
+        {
+            sum += scoresArray[i];
+        }
+        return sum;
     }
 
     /// <summary>

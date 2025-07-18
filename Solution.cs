@@ -1,37 +1,88 @@
-using System.Text;
-
 class Solution
 {
+    /// <summary>
+    /// 세균 증식
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    public int Solution07172(int n, int t)
+    {
+        return n << t;
+        /*
+        int answer = 0;
+        // Math
+        answer = (int)(n * Math.Pow(2, t));
+        // for
+        for (int i = 0; i < t; i++)
+        {
+            n *= 2;
+        }
+        answer = n;
+        return answer;
+        */
+    }
+
+    /// <summary>
+    /// 피자 나눠 먹기(1)
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0717(int n)
+    {
+        int answer = 0;
+        // 온전한 피자 한판으로 먹을 수 있는 사람 수
+        int piz = n / 7;
+        // 나머지 피자 조각 먹는 사람 수
+        int res = ((n % 7) == 0) ? 0 : 1;
+        /*
+        if ((n % 7) == 0)
+        {
+            res = 0;
+        }
+        else
+        {
+            res = 1;
+        }
+        */
+        answer = piz + res;
+        return answer;
+    }
+
     /// <summary>
     /// 뒤집힌 문자열
     /// </summary>
     /// <param name="my_string"></param>
     /// <returns></returns>
-
     public string Solution07162(string my_string)
     {
-        //위험한 코드
-        string answer = "";
+        //string answer = "ABC";
         var list = new List<char>(my_string);
         list.Reverse();
-        answer = new string(list.ToArray());
+        string answer = new string(list.ToArray());
+        /*
+        var sb = new StringBuilder();
+        foreach (var item in my_string)
+        {
+            sb.Insert(0, item);
+        }
+        string answer = sb.ToString();
+        */
+        /*
+        int len = my_string.Length;
+        //string answer = string.Empty;
+        char[] answerArray = new char[len];
+
+        // for / foreach 돌자
+        for (int i = 0; i < len; i++)
+        {
+            // 위치를 주의해서 배열로 바꾼 answer에 넣자
+            answerArray[len - 1 - i] = my_string[i];
+        }
+        // 캐릭터 배열을 스트링으로 바꿔서 리턴
+        string answer = new string(answerArray);
+        */
         return answer;
-
-
-        // var sb = new StringBuilder();
-        // foreach (var item in my_string)
-        // {
-        //     sb.Insert(0, item);
-        // }
-        // string answer = sb.ToString();
-        // return answer;
-        
-        // string answer = "";
-        // for (int i = my_string.Length - 1; i >= 0; i--)
-        // {
-        //     answer += my_string[i];
-        // }
-        // return answer;
     }
 
     /// <summary>
@@ -39,12 +90,19 @@ class Solution
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>
-
     public int Solution0716(string message)
     {
-        int answer = message.Length * 2;
+        int answer = 0;
+        answer = message.Length * 2;
         return answer;
     }
+    
+    /// <summary>
+    /// 특정 문자 제거하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="letter"></param>
+    /// <returns></returns>
     public string Solution07152(string my_string, string letter)
     {
         string answer = string.Empty;
