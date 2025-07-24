@@ -1,38 +1,198 @@
 class Solution
 {
     /// <summary>
-    /// 최댓값 만들기 (1)
+    /// 피자 나눠 먹기(3)
+    /// </summary>
+    /// <param name="slice"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07232(int slice, int n)
+    {
+        int answer = (n % slice > 0) ? n / slice + 1 : n / slice;
+        /*
+        int answer = 0;
+        // for 
+        for (int i = 1; i <= n; i += slice)
+        {
+            // 피자 한판 더하기
+            answer++;
+        }
+        */
+        return answer;
+    }
 
+    /// <summary>
+    /// 배열 자르기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int[] Solution0723(int[] numbers, int num1, int num2)
+    {
+        // 리턴할 배열의 크기를 먼저 구한다
+        int len = num2 - num1 + 1;
+        // 구한 크기만큼 배열을 선언
+        int[] answer = new int[len];
+        // 크기만큼 반복
+        for (int i = 0; i < len; i++)
+        {
+            // 인덱스에 해당하는 값을 배열에 넣는다
+            answer[i] = numbers[num1 + i];
+        }
+        // 배열을 리턴
+        return answer;
+    }
+
+    /// <summary>
+    /// 삼각형의 완성조건(1)
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
+    public int Solution07222(int[] sides)
+    {
+        int answer = 0;
+        // list를 이용한 정렬
+        var list = new List<int>(sides);
+        list.Sort();
+        // 정렬
+        //Array.Sort(sides);
+        /*
+        // 가장 큰 값과 나머지 값들의 합과 비교
+        if (sides[2] < sides[0] + sides[1])
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+        */
+        answer = (list[2] < list[0] + list[1]) ? 1 : 2;
+        //answer = (sides[2] < sides[0] + sides[1]) ? 1 : 2;
+        return answer;
+    }
+
+    /// <summary>
+    /// 머쓱이보다 키 큰 사람
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public int Solution0722(int[] array, int height)
+    {
+        int answer = 0;
+        foreach (var item in array)
+        {
+            if (item > height)
+            {
+                answer++;
+            }
+        }
+        /*
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] > height)
+            {
+                answer++;
+            }
+        }
+        */
+        return answer;
+    }
+
+    /// <summary>
+    /// 자릿수 더하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07212(int n)
+    {
+        int answer = 0;
+        // n을 string으로 변환
+        string str = n.ToString();
+        // string을 처음부터 반복
+        foreach (var item in str)
+        {
+            // answer에 각 char의 계산된 값을 더한다
+            answer += (item - '0');
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 모음 제거
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution0721(string my_string)
+    {
+        // 도트연산자 이어서 사용하기 예
+        //my_string.Replace("a", "").Remove(4).Substring(0, 2);
+        // char의 공백문자는 '\0'
+        //my_string.Replace('a','\0');
+        return my_string.Replace("a", "")
+            .Replace("e", "")
+            .Replace("i", "")
+            .Replace("o", "")
+            .Replace("u", "");
+        /*
+        // for, if를 사용한 방법
+        string answer = string.Empty;
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            if ((my_string[i] != 'a') &&
+                (my_string[i] != 'e') &&
+                (my_string[i] != 'i') &&
+                (my_string[i] != 'o') &&
+                (my_string[i] != 'u'))
+            {
+                // string연산이니까, stringBuilder를 쓰자
+                answer += my_string[i];
+            }
+        }
+        return answer;
+        */
+    }
+
+    /// <summary>
+    /// 최댓값 만들기(1)
     /// </summary>
     /// <param name="numbers"></param>
     /// <returns></returns>
-    public int solution0718(int[] numbers)
+    public int Solution0718(int[] numbers)
     {
         int answer = 0;
-
-        //중첩 for문을 이용한 풀이
-        // for (int i = 0; i < numbers.Length; i++)
-        // {
-        //     for (int j = i + 1; j < numbers.Length; j++)
-        //     {
-        //         int product = numbers[i] * numbers[j];
-        //         if (product > answer)
-        //         {
-        //             answer = product;
-        //         }
-        //     }
-        // }
-        //정렬을 이용한 풀이
-        // Array.Sort(numbers);
-        // int last = numbers[numbers.Length - 1];
-        // int secondLast = numbers[numbers.Length - 2];
-        // answer = last * secondLast;
-
+        // 중첩 for문을 이용한 방법
+        /*
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                // if (i == j)
+                // {
+                //     continue;
+                // }
+                // 각각의 인덱스 값을 곱해서 나온 값과 현재 최대값을 비교
+                // if (answer < numbers[i] * numbers[j])
+                // {
+                //     // 큰값을 최대값으로
+                //     answer = numbers[i] * numbers[j];
+                // }
+                answer = Math.Max(answer, numbers[i] * numbers[j]);
+            }
+        }
+        */
+        // 정렬를 이용한 방법
+        //Array.Sort(numbers);
+        // 마지막 수와 마지막 전 수 를 곱한다
+        //answer = numbers[numbers.Length - 1] * numbers[numbers.Length - 2];
         var list = new List<int>(numbers);
         list.Sort();
         answer = list[list.Count - 1] * list[list.Count - 2];
         return answer;
     }
+
     /// <summary>
     /// 세균 증식
     /// </summary>
@@ -129,7 +289,7 @@ class Solution
         answer = message.Length * 2;
         return answer;
     }
-
+    
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>

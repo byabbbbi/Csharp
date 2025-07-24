@@ -1,49 +1,216 @@
 using System.Collections;
 using System.Text;
 
-class CSStudy
+public class CSStudy
 {
+    public void ConditionSample()
+    {
+        string category = "참외"; //"사과";
+        int price = 0;
+
+        switch (category)
+        {
+            case "참외":
+            case "사과":
+                price = 2000;
+                break;
+            case "딸기":
+                price = 10000;
+                break;
+            case "포도":
+                price = 6000;
+                break;
+            default:
+                price = 1000;
+                break;
+        }
+        // 사과는 2000원입니다.
+        Console.WriteLine("{1}는 {0}원입니다.", price, category);
+
+        int val = 100;
+        switch (val)
+        {
+            case 0:
+                // 0...
+                break;
+            case 100:
+                // 100...
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void OperatorSample()
+    {
+        int i = 100, j = 0;
+        Console.WriteLine("before:{0}-{1}", i, j);
+        //j = i--;
+        j = --i;
+        Console.WriteLine("after:{0}-{1}", i, j);
+
+        for (int z = 0; z < 10; ++z)
+        {
+
+        }
+        int a = 5, b = -2, c = 1;
+        bool d = true; //false;
+        if ((a > 1 && b < 0) || c == 1 || !d)
+        {
+            Console.WriteLine("ok");
+        }
+
+        byte ba = 7;
+        byte bb = (byte)((ba & 3) | 4);
+        Console.WriteLine(bb);
+
+        i = 2;
+        i = i << 5;
+
+        //int val = (a > b) ? a : b;
+        int val;
+        if (a > b)
+        {
+            val = a;
+        }
+        else
+        {
+            val = b;
+        }
+        string str = null;
+        string s = str ?? "몰라";
+        Console.WriteLine(s);
+
+        int? ni = null;
+        i = ni ?? 20;
+    }
+
+    string GetName() { return ""; }
+    static public int GetId() { return 0; }
+    public static int GetId2() { return 0; }
+
+    public void CodingGuide()
+    {
+        bool isValid = false;
+        if (isValid == false)
+        {
+            // 하지마라
+        }
+        else
+        {
+            // 해라
+        }
+        if (isValid)
+        {
+            // 해라
+        }
+        else
+        {
+            // 하지마라
+        }
+
+        int a = 0, b = 0;
+        if ((a = b) == 10)
+        {
+
+        }
+        a = b;
+        if (a == 10)
+        {
+
+        }
+
+        string path = @"C:\Temp\Test.txt";
+        string s1 = "1", s2 = "2", s3 = "3";
+        //var res = s1 + "+" + s2 + "=" + s3;
+        var res = string.Format("{0}+{1}={2}", s1, s2, s3);
+    }
+
+    public enum GameState { Ready, Run }
+    public enum Category
+    {
+        Cake,
+        IceCream,
+        Bread
+    }
+    enum City
+    {
+        Seoul,
+        Daejun,
+        Busan = 5,
+        Jeju = 10
+    }
+    [Flags]
+    enum Border
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 8
+    }
+    
+    public void EnumSample()
+    {
+        Category cafeCategory;
+        cafeCategory = Category.Bread;
+        //Console.WriteLine((int)cafeCategory);
+        City myCity = City.Seoul;
+        int cityValue = (int)myCity;
+        if (myCity == City.Seoul)
+        {
+            //Console.WriteLine("Welcome to Seoul");
+        }
+
+        // OR 연산자로 다중 플래그 할당
+        Border b = Border.Top | Border.Bottom | Border.Left;
+        // & 연산자로 플래그 체크
+        if ((b & Border.Top) != 0)
+        {
+            // HasFlag() 이용
+            if (b.HasFlag(Border.Bottom))
+            {
+                Console.WriteLine((int)b);
+            }
+        }
+    }
+
     public void SBSample()
     {
         var sb = new StringBuilder();
         for (int i = 1; i <= 26; i++)
         {
             sb.Append(i.ToString());
-            // sb.Append(System.Environment.NewLine);
+            //sb.Append(System.Environment.NewLine);
             sb.Append(' ');
         }
         string s = sb.ToString();
-        Console.WriteLine("Result: {0}", s);
+        Console.WriteLine("Result:{0}", s);
 
         sb.Clear();
-        sb.Append('A' + 3);
+        sb.Append((char)('A' + 3));
         Console.WriteLine(sb.ToString());
     }
 
     public void ASCIISample()
     {
         string s = "C# Studies";
-
         for (int i = 0; i < s.Length; i++)
         {
-            Console.WriteLine("{1}:{0}", i, s[i]);
+            //Console.WriteLine("{1}: {0}", i, s[i]);
         }
-
         string str = "Hello";
         char[] charArray = str.ToCharArray();
         for (int i = 0; i < charArray.Length; i++)
         {
-            Console.WriteLine("{0}:{1}", i, charArray[i]);
+            //Console.WriteLine("{0}:{1}", i, charArray[i]);
         }
-
-
         char[] charArray2 = { 'A', 'B', 'C', 'D' };
         string s2 = new string(charArray2);
-
-        //  Console.WriteLine(s2);
-
-        char c1 = 'A';
-        char c2 = (char)(c1 + 3);
+        //Console.WriteLine(s2);
+        // 문자 연산
+        char c1 = 'Z';
+        char c2 = (char)(c1 - 9);
         Console.WriteLine(c2);
     }
 
@@ -53,7 +220,7 @@ class CSStudy
         string s2 = "Programming";
         int startIndex = 3;
         int len = s2.Length - startIndex - 1;
-        string s3 = s2.Substring(3, len);
+        string s3 = s2.Substring(startIndex, len);
         Console.WriteLine(s3);
 
         char c1 = 'A';
@@ -64,9 +231,8 @@ class CSStudy
 
         string s4sub = s4.Substring(1, 5);
         Console.WriteLine("SubString: {0}", s4sub);
-
-
     }
+
     public void ArraySample()
     {
         var players = new string[10];
