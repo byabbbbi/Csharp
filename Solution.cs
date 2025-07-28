@@ -1,6 +1,114 @@
 class Solution
 {
     /// <summary>
+    /// n의 배수 고르기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="numlist"></param>
+    /// <returns></returns>
+    public int[] Solution07252(int n, int[] numlist)
+    {
+        // 배수를 담을 리스트 정의
+        var list = new List<int>();
+        // numlist를 순회하면서
+        foreach (var item in numlist)
+        {
+            // n의 배수이면 
+            if (item % n == 0)
+            {
+                // 리스트에 넣기
+                list.Add(item);
+            }
+        }
+        // 리턴할 배열 정의
+        int[] answer = new int[list.Count];
+        // 리스트를 순회하면서
+        for (int i = 0; i < answer.Length; i++)
+        {
+            // 배열에 리스트 값 넣기
+            answer[i] = list[i];
+        }
+        // 배열 리턴
+        return answer;
+    }
+
+    /// <summary>
+    /// 순서쌍의 개수
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0725(int n)
+    {
+        int answer = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 배열의 유사도
+    /// </summary>
+    /// <param name="s1"></param>
+    /// <param name="s2"></param>
+    /// <returns></returns>
+    public int Solution07242(string[] s1, string[] s2)
+    {
+        int answer = 0;
+        // s1의 크기만큼 반복
+        foreach (var item1 in s1)
+        {
+            // s2의 크기만큼 반복
+            foreach (var item2 in s2)
+            {
+                // 같으면 answer 증가
+                if (item1.Equals(item2))
+                //if (item1 == item2)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 점의 위치 구하기
+    /// </summary>
+    /// <param name="dot"></param>
+    /// <returns></returns>
+    public int Solution0724(int[] dot)
+    {
+        return dot[0] > 0 ? dot[1] > 0 ? 1 : 4 : dot[1] > 0 ? 2 : 3;
+        /*
+        if (dot[0] > 0)
+        {
+            if (dot[1] > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 4;
+            }
+        }
+        else
+        {
+            if (dot[1] > 0)
+            {
+                return 2;
+            }
+            else
+            {
+                return 3;
+            }
+        }
+        */
+    }
+
+    /// <summary>
     /// 피자 나눠 먹기(3)
     /// </summary>
     /// <param name="slice"></param>
