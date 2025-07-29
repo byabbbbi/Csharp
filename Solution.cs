@@ -1,6 +1,89 @@
 class Solution
 {
     /// <summary>
+    /// 문자 반복 출력하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution07292(string my_string, int n)
+    {
+        string answer = string.Empty;
+        // foreach로 my_string을 순회
+        foreach (var item in my_string)
+        {
+            // for로 n만큼 반복
+            for (int i = 0; i < n; i++)
+            {
+                // answer에 더한다
+                answer += item;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 안에 문자열
+    /// </summary>
+    /// <param name="str1"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public int Solution0729(string str1, string str2)
+    {
+        /*
+        int answer = 0;
+        if (str1.Contains(str2))
+        {
+            answer = 1;
+        }
+        else
+        {
+            answer = 2;
+        }
+        */
+        int answer = str1.Contains(str2) ? 1 : 2;
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열 원소의 길이
+    /// </summary>
+    /// <param name="strlist"></param>
+    /// <returns></returns>
+    public int[] Solution07282(string[] strlist)
+    {
+        // 리턴할 배열의 크기를 얻어온다
+        int len = strlist.Length;
+        // 크기만큼의 배열을 정의한다
+        int[] answer = new int[len];
+        // for
+        for (int i = 0; i < len; i++)
+        {
+            // 리턴 배열의 각 요소에 strlist의 각 요소 길이를 넣는다
+            answer[i] = strlist[i].Length;
+        }
+        // 배열을 리턴
+        return answer;
+    }
+
+    /// <summary>
+    /// 아이스 아메리카노
+    /// </summary>
+    /// <param name="money"></param>
+    /// <returns></returns>
+    public int[] Solution0728(int money)
+    {
+        /*
+        int[] answer = new int[2];
+        answer[0] = money / 5500;
+        //answer[1] = money - answer[0] * 5500;
+        answer[1] = money % 5500;
+        return answer;
+        */
+        return new int[] { money / 5500, money % 5500 };
+    }
+
+    /// <summary>
     /// n의 배수 고르기
     /// </summary>
     /// <param name="n"></param>
