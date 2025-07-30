@@ -1,4 +1,4 @@
-﻿using Zinine;
+﻿using Kimyh;
 
 internal class Program
 {

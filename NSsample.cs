@@ -1,4 +1,4 @@
-namespace Zinine
+namespace Kimyh
 {
     class Util
     {
