@@ -12,7 +12,7 @@ internal class Program
         var strArr1 = new string[] { "I", "Love", "Programmers." };
         var strArr2 = new string[] { "m", "dot" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution07292("hello", 3));
+        Console.WriteLine(sol.solution07302(27));
         //Util.PrintIntArray(sol.Solution07282(strArr1));
 
         CSStudy stduy = new CSStudy();

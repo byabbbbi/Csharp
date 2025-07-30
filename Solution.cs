@@ -1,5 +1,64 @@
+using System.Text;
+
 class Solution
 {
+
+    /// <summary>
+    /// 제곱수 판별하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int solution07302(int n)
+    {
+        //  int answer = 0, min = 1, max = 1000;
+
+        // for (int i = min; i <= max; i++)
+        // {
+        //     if (i * 1 == n)
+        //     {
+        //         answer = 1;
+        //         break;
+        //     }
+        //     answer = 2;
+        // }
+        // return answer;
+
+        double answer = Math.Sqrt(n);
+        return (answer % 1 == 0) ? 1 : 2;
+        // if (answer % 1 == 0)
+        // {
+        //     return 1;
+        // } else
+        // {
+        //     return 2;
+        // }
+    }
+
+    /// <summary>
+    ///문자 리스트를 문자열로 변환하기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+
+    public string solution0730(string[] arr)
+    {
+        string answer = "";
+        // foreach (string item in arr)
+        // {
+        //     answer += item;
+        // }
+
+        var sb = new StringBuilder();
+        foreach (var item in arr)
+        {
+            sb.Append(item);
+        }
+        answer = sb.ToString();
+
+        return answer;
+    }
+
+
     /// <summary>
     /// 문자 반복 출력하기
     /// </summary>
@@ -480,7 +539,7 @@ class Solution
         answer = message.Length * 2;
         return answer;
     }
-    
+
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>
