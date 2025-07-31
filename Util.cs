@@ -1,4 +1,4 @@
-namespace Kimyh
+namespace Zinine
 {
     class Util
     {
@@ -44,7 +44,7 @@ namespace Kimyh
             const int PICK_BALLS = 6;     // 뽑는 공 수
 
             // 랜덤 함수 사용 선언
-            var random = new Random();
+            var random = new System.Random();
             // 볼이 담긴 리스트 선언
             var ballList = new List<int>();
             // 리스트에 볼 45개 넣기

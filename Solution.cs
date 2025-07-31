@@ -2,62 +2,88 @@ using System.Text;
 
 class Solution
 {
+    /// <summary>
+    /// 중복된 숫자 개수
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07312(int[] array, int n)
+    {
+        int answer = 0;
+        // foreach
+        foreach (var item in array)
+        {
+            // if
+            if (item == n)
+            {
+                // 같으면 answer 증가
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 붙여서 출력하기
+    /// </summary>
+    public void Solution0731()
+    {
+        String[] input;
+        Console.Clear();
+        input = Console.ReadLine().Split(' ');
+        String s1 = input[0];
+        String s2 = input[1];
+
+        Console.WriteLine(s1 + s2);
+    }
 
     /// <summary>
     /// 제곱수 판별하기
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
-    public int solution07302(int n)
+    public int Solution07302(int n)
     {
-        //  int answer = 0, min = 1, max = 1000;
-
-        // for (int i = min; i <= max; i++)
-        // {
-        //     if (i * 1 == n)
-        //     {
-        //         answer = 1;
-        //         break;
-        //     }
-        //     answer = 2;
-        // }
-        // return answer;
-
+        /*
+        int answer = 0, min = 1, max = 1000;
+        for (int i = min; i <= max; i++)
+        {
+            if (i * i == n)
+            {
+                answer = 1;
+                break;
+            }
+            answer = 2;
+        }
+        return answer;
+        */
         double answer = Math.Sqrt(n);
         return (answer % 1 == 0) ? 1 : 2;
-        // if (answer % 1 == 0)
-        // {
-        //     return 1;
-        // } else
-        // {
-        //     return 2;
-        // }
     }
 
     /// <summary>
-    ///문자 리스트를 문자열로 변환하기
+    /// 문자리스트를 문자열로 변환하기
     /// </summary>
     /// <param name="arr"></param>
     /// <returns></returns>
-
-    public string solution0730(string[] arr)
+    public string Solution0730(string[] arr)
     {
         string answer = "";
-        // foreach (string item in arr)
-        // {
-        //     answer += item;
-        // }
-
+        /*
+        foreach (var item in arr)
+        {
+            answer += item;
+        }
+        */
         var sb = new StringBuilder();
         foreach (var item in arr)
         {
             sb.Append(item);
         }
         answer = sb.ToString();
-
         return answer;
     }
-
 
     /// <summary>
     /// 문자 반복 출력하기
@@ -539,7 +565,7 @@ class Solution
         answer = message.Length * 2;
         return answer;
     }
-
+    
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>
