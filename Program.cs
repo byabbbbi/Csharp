@@ -9,14 +9,21 @@ internal class Program
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        var intArray = new int[] { 0,2,3,4 };
+        var intArray = new int[] {1, 2, 7, 10, 11 };
         var strArr1 = new string[] { "ab", "b", "c" };
         var strArr2 = new string[] { "m", "dot" };
         Solution sol = new Solution();
-        Console.WriteLine(sol.Solution07312(intArray, 1));
+        Console.WriteLine(sol.Solution08012(intArray));
         //Util.PrintIntArray(sol.Solution07282(strArr1));
 
         CSStudy study = new CSStudy();
         //study.ArrayExample();
+
+        MyCustomer mc = new MyCustomer();
+        mc.Name = "Kim";
+        mc.Age = 20;
+        // mc.SetAge(-23);
+        Console.WriteLine(mc.GetCustomerData());
+        Console.WriteLine(mc.CalAge(30));
     }
 }

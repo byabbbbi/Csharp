@@ -1,7 +1,55 @@
 using System.Text;
+using System.Collections.Generic;
 
 class Solution
 {
+
+    /// <summary>
+    /// 중앙값 구하기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    /// 
+    public int solution08012(int[] array)
+    {
+         // 배열 값을 가진 리스트
+        var list = new List<int>(array);
+
+        // 리스트 정렬
+        list.Sort();
+
+        // 가운데에 해당하는 인덱스 구함
+        int midIndex = list.Count / 2;
+
+        // 중앙값을 answer에 저장
+        int answer = list[midIndex];
+
+        // 리스트에서 그 인덱스의 값 리턴
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열 두 배 만들기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int[] Solution0801(int[] numbers)
+    {
+        int[] answer = new int[numbers.Length];
+        //numbers의 크기만큼 반복
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            //index에 해당하는 값을 두배로 해서 넣기
+            // answer[i] = numbers[i] * 2;
+            answer[i] *= 2;
+            //answer[i] <<= 1;
+        }
+
+        //결과 리턴
+
+        return answer;
+    }
     /// <summary>
     /// 중복된 숫자 개수
     /// </summary>
@@ -565,7 +613,7 @@ class Solution
         answer = message.Length * 2;
         return answer;
     }
-    
+
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>
