@@ -1,31 +1,85 @@
 using System.Text;
-using System.Collections.Generic;
 
 class Solution
 {
+    /// <summary>
+    /// 옷가게 할인 받기
+    /// </summary>
+    /// <param name="price"></param>
+    /// <returns></returns>
+    public int Solution08042(int price)
+    {
+        /*
+        double answer = price;
+        if (price >= 500000)
+        {
+            answer = price * 0.80;
+        }
+        else if (price >= 300000)
+        {
+            answer = price * 0.90;
+        }
+        else if (price >= 100000)
+        {
+            answer = price * 0.95;
+        }
+        return (int)answer;
+        */
+        if (price >= 500000)
+        {
+            price = (int)(price * 0.8);
+        }
+        else if (price >= 300000)
+        {
+            price = (int)(price * 0.9);
+        }
+        else if (price >= 100000)
+        {
+            price = (int)(price * 0.95);
+        }
+        return price;
+    }
+
+    /// <summary>
+    /// 짝수는 싫어요
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0804(int n)
+    {
+        // List 정의
+        //List<int> list = new List<int>();
+        var list = new List<int>();
+        // 1부터 n(포함)까지 반복
+        for (int i = 1; i <= n; i++)
+        {
+            // 홀수냐?
+            if (i % 2 != 0)
+            {
+                // 홀수면 list에 넣기
+                list.Add(i);
+            }
+        }
+        // list를 int[] 형식으로 바꿔서 리턴
+        return list.ToArray();
+    }
 
     /// <summary>
     /// 중앙값 구하기
     /// </summary>
     /// <param name="array"></param>
     /// <returns></returns>
-    /// 
-    public int solution08012(int[] array)
+    public int Solution08012(int[] array)
     {
-         // 배열 값을 가진 리스트
+        // array값을 가진 list를 만든다
         var list = new List<int>(array);
-
-        // 리스트 정렬
+        // list를 정렬한다
         list.Sort();
-
-        // 가운데에 해당하는 인덱스 구함
-        int midIndex = list.Count / 2;
-
-        // 중앙값을 answer에 저장
-        int answer = list[midIndex];
-
-        // 리스트에서 그 인덱스의 값 리턴
-        return answer;
+        // 가운데에 해당하는 인덱스를 구한다
+        //int index = list.Count / 2;
+        int index = array.Length / 2;
+        // list에서 그 인덱스의 값을 리턴한다
+        return list[index];
     }
 
     /// <summary>
@@ -35,21 +89,18 @@ class Solution
     /// <returns></returns>
     public int[] Solution0801(int[] numbers)
     {
-        int[] answer = new int[numbers.Length];
-        //numbers의 크기만큼 반복
-
+        // numbers의 크기만큼 반복
         for (int i = 0; i < numbers.Length; i++)
         {
-            //index에 해당하는 값을 두배로 해서 넣기
-            // answer[i] = numbers[i] * 2;
-            answer[i] *= 2;
-            //answer[i] <<= 1;
+            // index에 해당하는 값을 두배해서 넣기
+            //numbers[i] = numbers[i] * 2;
+            numbers[i] *= 2;
+            //numbers[i] <<= 1;
         }
-
-        //결과 리턴
-
-        return answer;
+        // 결과 리턴
+        return numbers;
     }
+
     /// <summary>
     /// 중복된 숫자 개수
     /// </summary>
@@ -613,7 +664,7 @@ class Solution
         answer = message.Length * 2;
         return answer;
     }
-
+    
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>

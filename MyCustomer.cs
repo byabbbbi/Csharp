@@ -3,34 +3,28 @@ public class MyCustomer
     // 필드
     private string name;
     private int age;
-
-    // 이벤트 
+    // 이벤트
     public event EventHandler NameChanged;
-
-    // 생성자 (Constructor)
+    // 생성자 (constructor)
     public MyCustomer()
     {
         name = string.Empty;
         age = -1;
     }
-
-    // 속성
+    // 프로퍼티
     public string Name
     {
         get
         {
-            Console.WriteLine("이름 넘김");
+            Console.WriteLine("이름을 넘기겠습니다");
             return this.name;
         }
         set
         {
-            if (this.name != value)
+            this.name = value;
+            if (NameChanged != null)
             {
-                this.name = value;
-                if (NameChanged != null)
-                {
-                    NameChanged(this, EventArgs.Empty);
-                }
+                NameChanged(this, EventArgs.Empty);
             }
         }
     }
@@ -39,10 +33,9 @@ public class MyCustomer
         get { return this.age; }
         set
         {
-
             if (value < 0)
             {
-                Console.WriteLine("음수 안됨");
+                Console.WriteLine("음수값은 안되요");
             }
             else
             {
@@ -50,12 +43,11 @@ public class MyCustomer
             }
         }
     }
-
     public void SetAge(int value)
     {
         if (value < 0)
         {
-            Console.WriteLine("음수 안됨");
+            Console.WriteLine("음수값은 안되요");
         }
         else
         {
@@ -65,7 +57,12 @@ public class MyCustomer
     // 메서드
     public string GetCustomerData()
     {
-        string data = string.Format($"Name: {Name} (Age: {Age})");
+        /*
+        string data =
+            string.Format("Name:{0} (Age:{1})",
+            Name, Age);
+        */
+        string data = $"Name:{Name} (Age:{Age})";
         return data;
     }
 
